@@ -1,0 +1,21 @@
+<div class="black-container">
+  <div class="container-add-image">
+    <div class="half-window">
+      <img src="../img/new_image.svg" alt="" />
+    </div>
+    <div class="half-window">
+      <a href="/admin">
+        <h4>Вернуться в меню</h4>
+      </a>
+
+      <form action="/admin/add-category" method="POST" class="form-crud" enctype="multipart/form-data">
+
+        <input type="text" name="categoryName" class="input-upload" id="add-category"
+          placeholder="Введите имя новой категории" />
+        <button id="btn-add-category" class="btn btn-green" type="submit">
+          Добавить
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

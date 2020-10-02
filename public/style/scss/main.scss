@@ -1,0 +1,24 @@
+@import "helpers/_color_and_font";
+
+@import "helpers/_global";
+
+@import "helpers/_mixins";
+
+// ELEMENTS
+@import "elements/_msg";
+@import "elements/_open_menu";
+// FORMS AND INPUTS
+@import "elements/_forms_and_inputs";
+// BUTTUNS
+@import "elements/_buttons";
+
+// PAGES
+@import "pages/_gallery";
+
+@import "pages/_menu-admin";
+
+@import "pages/_authorization";
+
+@import "pages/_add-image";
+
+@import "pages/_remove-image";

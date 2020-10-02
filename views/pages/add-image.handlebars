@@ -1,0 +1,28 @@
+<div class="black-container">
+  <div class="opacity20"></div>
+  <div class="container-add-image opacity80">
+    <div class="half-window-add-image">
+      <img class="svg-graf" src="../img/new_image.svg" alt="" />
+    </div>
+    <div class="half-window">
+      <a href="/admin">
+        <h4>Вернуться в меню</h4>
+      </a>
+      <form action="/admin/add-image" method="POST" class="form-crud" enctype="multipart/form-data">
+        <h3>Добавление новой картинки</h3>
+        <h6>Выберите категорию</h6>
+        <select name="categories" class="categories">
+          <option value="c-all"></option>
+          {{#each category}}
+          <option value="c-{{categoryName}} c-all">{{categoryName}}</option>
+          {{/each}}
+        </select>
+        <input type="file" name="images" class="input-upload" id="add-image" />
+        <button class="btn btn-green button-load" type="submit">
+          Загрузить
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="../js/add-image.js"></script>

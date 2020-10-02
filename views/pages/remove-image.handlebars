@@ -1,0 +1,27 @@
+<h1 class="text-center">Что вы хотите удалить?</h1>
+<div class="left-positi">
+  <a href="/admin">
+
+    <i class="material-icons">undo</i>
+    <h3 class="text-center">Вернуться в меню</h3>
+
+  </a>
+</div>
+
+<div class="galery-container">
+
+  {{#if image}}
+
+  {{#each image}}
+  <div class="card-image">
+    <form action="/admin/remove-image/{{imagesName}}?_method=DELETE" method="post">
+      <img class="{{categories}}" id="photo" src="/uploads/{{imagesName}}" alt="" />
+      <input type="hidden" name="_method" value="DELETE">
+      <button type="submit"><i class="material-icons">delete</i></button>
+    </form>
+  </div>
+  {{/each}}
+  {{/if}}
+
+</div>
+<script src="../js/remove-image.js"></script>

@@ -1,0 +1,173 @@
+.black-container {
+  background-image: url("../../img/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+.opacity20 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: $center;
+  padding: 30px 30px;
+  background-color: white;
+  opacity: 0.2;
+}
+.opacity80 {
+  opacity: 0.8;
+}
+.container-auth,
+.container-add-image {
+  width: 900px;
+  height: 60vh;
+  background-color: $white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: $center;
+  border-radius: 20px;
+  display: flex;
+  img {
+    height: 100%;
+  }
+  @include screen(tablet-wide) {
+    width: 90%;
+  }
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+    height: 95%;
+  }
+  h4 {
+    background-color: $white;
+    border-radius: 20px;
+    padding: 5px 20px;
+    margin-top: 10px;
+    &:hover {
+      background-color: $black;
+      color: $white;
+    }
+  }
+  .half-window {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 700px) {
+      width: 100%;
+      padding-top: 20px;
+    }
+    .btn-green {
+      margin-top: 7.5px;
+    }
+    .btn-red {
+      margin-top: 15px;
+    }
+  }
+  .half-window-add-image {
+    width: 50%;
+    display: flex;
+    align-items: center;
+  }
+  .side-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    .content-wrapper {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: auto;
+      text-align: center;
+      .btn {
+        margin-top: 10px;
+        border: 1px solid $white;
+      }
+    }
+    @media screen and (max-width: 700px) {
+      width: 100%;
+      height: 50%;
+    }
+  }
+  .red-side-container {
+    z-index: 2;
+    background-color: $red;
+    right: 0;
+    .content-wrapper {
+      .btn {
+        &:hover {
+          background-color: $white;
+          color: $red;
+        }
+      }
+    }
+    @media screen and (max-width: 700px) {
+      left: 0;
+      top: 50%;
+    }
+  }
+  .green-side-container {
+    background-color: $green;
+    display: none;
+    .content-wrapper {
+      .btn {
+        &:hover {
+          background-color: $white;
+          color: $green;
+        }
+      }
+    }
+  }
+}
+// ANIMATIONS
+.red-animation {
+  animation-name: reg;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+.green-animation {
+  animation-name: login;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes login {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(100%, 0px);
+  }
+}
+@keyframes reg {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(-100%, 0px);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  @keyframes reg {
+    100% {
+      transform: translate(0px, -100%);
+    }
+  }
+  @keyframes login {
+    100% {
+      transform: translate(0px, 100%);
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<div class="black-container">
+
+  <h2 class="font-white text-center">Какую категорию вы хотите удалить?</h2>
+
+  <nav class="menu">
+    {{#each category}}
+    <form action="/admin/remove-category/{{categoryName}}?_method=DELETE" method="post">
+      <input type="hidden" name="_method" value="DELETE">
+      <button id="btn" class="btn btn-remove-category" type="submit">
+        <div id="category-menu" class="c-{{categoryName}}">
+          <h3>{{categoryName}}</h3>
+        </div>
+      </button>
+    </form>
+    {{/each}}
+  </nav>
+</div>
+<script src="../js/remove-category.js"></script>

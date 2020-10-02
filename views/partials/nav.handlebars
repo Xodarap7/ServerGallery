@@ -1,0 +1,35 @@
+<div id="open-menu" class="">
+
+  <div id="category-menu" class="c-all">
+    <h4>all</h4>
+  </div>
+  {{#each category}}
+  <div id="category-menu" class="c-{{categoryName}}">
+    <h4>{{categoryName}}</h4>
+  </div>
+  {{/each}}
+</div>
+<nav class="menu">
+  <div id="menu" class="cursor-pointer">
+    <i class="material-icons">menu</i>
+    <p><span>Категории</span></p>
+  </div>
+
+  {{#each user}}
+  {{#if isAdmin }}
+  <div class="log-out-button">
+    <a href="/admin"><i class="material-icons">settings</i>
+      <p><span>Настроить</span></p>
+    </a>
+  </div>
+  {{/if}}
+  {{/each}}
+
+
+  <div class="log-out-button">
+    <a href="/logout"><i class="material-icons">logout</i>
+      <p><span>Выйти</span></p>
+    </a>
+  </div>
+
+</nav>

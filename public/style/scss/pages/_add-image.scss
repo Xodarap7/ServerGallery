@@ -1,0 +1,54 @@
+// .container-add-image -  _authorization.scss
+.left-position {
+  position: fixed;
+  transform: $center;
+  left: 50%;
+  top: 10vh;
+  color: $white;
+}
+.svg-graf {
+  @include screen(tablet) {
+    display: none;
+  }
+}
+.half-window {
+  flex-direction: column;
+
+  &:nth-child(1) {
+    @include screen(tablet) {
+      // display: none;
+      width: 100%;
+    }
+  }
+  &:nth-child(2) {
+    background-color: $red;
+    border-radius: 20px;
+    @include screen(tablet) {
+      width: 100%;
+    }
+  }
+  img {
+    width: 100%;
+  }
+  h6 {
+    font-style: italic;
+  }
+  .categories {
+    width: 100%;
+    height: 50px;
+    border: solid 1px;
+    font-size: 20px;
+    margin-top: 15px;
+    option {
+      height: 30px;
+      font-size: 15px;
+    }
+  }
+  .input-upload {
+    margin-top: 15px;
+  }
+  .button-load {
+    display: none;
+    margin-top: 15px !important;
+  }
+}

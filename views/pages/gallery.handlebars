@@ -1,0 +1,36 @@
+<!-- OVERLAY -->
+<div class="overlay"></div>
+<!-- MODAL -->
+<div class="modal">
+  <div class="close-window">
+    <i class="material-icons">clear</i>
+  </div>
+  <div class="modal-slide-btn previous">
+    <i class="material-icons">chevron_left</i>
+  </div>
+  <div class="modal-slide-btn next">
+    <i class="material-icons">chevron_right</i>
+  </div>
+  <img src="#" alt="Modal Image" />
+</div>
+<!-- MENU -->
+{{>nav}}
+
+<!-- HEADER IMAGE -->
+{{>header-image}}
+
+<!-- GALLERY -->
+<div class="galery-container">
+  {{#if image}}
+
+  {{#each image}}
+
+  <img class="{{categories}}" id="photo" src="/uploads/{{imagesName}}" alt="" />
+
+  {{/each}}
+  {{/if}}
+</div>
+
+
+
+<script src="js/gallery.js"></script>

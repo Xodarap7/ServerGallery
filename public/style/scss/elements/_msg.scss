@@ -1,0 +1,58 @@
+.alert {
+  display: block;
+  position: fixed;
+  width: auto;
+  top: 20px;
+  transform: translateX(-50%);
+  left: 50%;
+  padding: 10px 50px;
+  border-radius: 50px;
+  background-color: whitesmoke;
+  z-index: 10;
+  animation-name: opacity;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+
+  .msg-icons {
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 30px;
+    @include screen(phone) {
+      font-size: 20px;
+    }
+  }
+  .error-text {
+    font-size: 15px;
+    @include screen(phone) {
+      font-size: 12px;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    top: 27px;
+    width: 80%;
+    padding: 10px 10px;
+  }
+}
+.alert-success {
+  border: 3px solid $green;
+  .msg-icons {
+    color: $green;
+  }
+}
+.alert-danger {
+  border: 3px solid $red;
+  .msg-icons {
+    color: $red;
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

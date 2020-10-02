@@ -1,0 +1,61 @@
+// .left-pos {
+//   .nav-buttons {
+//     display: flex;
+//     justify-content: flex-start;
+//     justify-items: start;
+//     margin-bottom: 20px;
+//     padding: 10px;
+//   }
+// }
+.left-positi {
+  height: auto;
+  padding: 5px 20px;
+  width: 100%;
+  background-color: black;
+  a {
+    display: flex;
+    flex-direction: row;
+    &:hover {
+      i {
+        color: $red;
+      }
+      h3 {
+        color: $red;
+      }
+    }
+    i {
+      color: white;
+      font-size: 40px;
+    }
+    h3 {
+      color: white;
+    }
+  }
+}
+
+.card-image {
+  position: relative;
+  margin: auto;
+  i {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 40px;
+
+    color: $red;
+    z-index: 1;
+    opacity: 0.5;
+    user-select: none;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+      font-size: 50px;
+      opacity: 1;
+    }
+  }
+  img {
+    min-width: 100%;
+  }
+}
