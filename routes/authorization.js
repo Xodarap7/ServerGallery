@@ -12,6 +12,7 @@ const passport = require("passport");
 const { validationResult, check } = require("express-validator");
 
 const User = require("../models/User");
+const { ensureGuest } = require("../helpers/auth");
 
 router.get("/", (req, res) => {
   res.render("pages/authorization", {
@@ -19,10 +20,14 @@ router.get("/", (req, res) => {
   });
 });
 
-// router.post("/login", (req, res) => {
-//   console.log(req.body);
-//   return;
-// });
+//login
+router.post("/login", async (req, res, next) => {
+  passport.authenticate("local", {
+    successRedirect: "/gallery",
+    failureRedirect: "/authorization",
+  })(req, res, next);
+});
+
 router.post(
   "/register",
   [
@@ -229,21 +234,13 @@ router.post("/change-password/:token", function (req, res) {
   );
 });
 
-//login
-router.post("/login", async (req, res, next) => {
-  passport.authenticate("local", {
-    successRedirect: "/gallery",
-    failureRedirect: "/",
-  })(req, res, next);
-});
-
 // @route   GET /users/logout
 // @desc    Return current user
 // @access  Public
 router.get("/logout", (req, res) => {
   req.logout();
   req.session.destroy();
-  res.redirect("/");
+  res.redirect("/authorization");
 });
 
 module.exports = router;

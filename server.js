@@ -74,8 +74,8 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use("/", authorizationRoute);
-app.use("/gallery", ensureGuest, galleryRoute);
+app.use("/authorization", authorizationRoute);
+app.use("/gallery", galleryRoute);
 app.use("/admin", ensureAdmin, adminRoute);
 
 async function start() {

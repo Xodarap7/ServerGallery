@@ -16,7 +16,7 @@ const openMenuButton = document.querySelector("#menu");
 const categories = document.querySelectorAll("#category-menu");
 
 openMenuButton.addEventListener("click", () => {
-  openMenu.style.display = "flex";
+  openMenu.style.display = "block";
   openMenu.classList.add("animation-open-menu");
 });
 

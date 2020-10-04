@@ -2,7 +2,7 @@
   <div class="opacity20"></div>
   <div class="container-auth opacity80">
     <div class="half-window">
-      <form action="/login" method="POST" class="form-auth-login">
+      <form action="/authorization/login" method="POST" class="form-auth-login">
         <h3>YGallery</h3>
         <input class="input-form-auth" type="email" name="email" placeholder="Введите ваш email" />
         <input class="input-form-auth" type="password" name="password" placeholder="Пароль" />
@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="half-window">
-      <form action="/register" method="POST" class="form-auth-register">
+      <form action="/authorization/register" method="POST" class="form-auth-register">
         <h3>Регистрация</h3>
         <input type="text" name="name" class="input-form-auth" placeholder="Введите ваше имя" value="{{name}}" />
         <input type="email" name="email" class="input-form-auth" placeholder="Введите ваш email" />

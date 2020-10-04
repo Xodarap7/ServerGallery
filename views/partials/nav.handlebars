@@ -1,20 +1,66 @@
 <div id="open-menu" class="">
+  <div class="menu-open-menu">
+    <div id="category-menu" class="cursor-pointer log-out-button">
+      <i class="material-icons">cancel</i>
+      <p><span>Закрыть</span></p>
+    </div>
+    {{#each user}}
+    {{#if isGuest }}
+    <div class="user-parameters">
+      <h4 class="font-green">{{name}}</h4>
+      <p class="font-white">{{email}}</p>
+    </div>
 
-  <div id="category-menu" class="c-all">
-    <h4>all</h4>
+    <div class="log-out-button">
+      <a href="/authorization/logout"><i class="material-icons">logout</i>
+        <p><span>Выйти</span></p>
+      </a>
+    </div>
+
+    {{/if}}
+    {{else}}
+    <p class="font-red">Вы еще не вошли в аккаунт</p>
+    <a href="/authorization"><button class="btn-menu btn-green">
+        Войти
+      </button>
+    </a>
+    {{/each}}
   </div>
-  {{#each category}}
-  <div id="category-menu" class="c-{{categoryName}}">
-    <h4>{{categoryName}}</h4>
+  <div class="svg-icons">
+    <div class="icons-container">
+      <i class="material-icons">favorite_border</i>
+      <img src="img/red_ellips.svg" alt="">
+      <p class="font-white text-center">Избранное</p>
+    </div>
+    <div class="icons-container">
+      <i class="material-icons">add_photo_alternate</i>
+      <img src="img/yellow_ellips.svg" alt="">
+      <p class="font-white text-center">Добавить фото</p>
+    </div>
+    <div class="icons-container">
+      <i class="material-icons">settings</i>
+      <img src="img/blue_ellips.svg" alt="">
+      <p class="font-white text-center">Настройки</p>
+    </div>
   </div>
-  {{/each}}
+
+  <div class="category-container">
+    <div id="category-menu" class="c-all">
+      <h4>all</h4>
+    </div>
+    {{#each category}}
+    <div id="category-menu" class="c-{{categoryName}}">
+      <h4>{{categoryName}}</h4>
+    </div>
+    {{/each}}
+  </div>
 </div>
+
 <nav class="menu">
   <div id="menu" class="cursor-pointer">
     <i class="material-icons">menu</i>
     <p><span>Категории</span></p>
   </div>
-
   {{#each user}}
   {{#if isAdmin }}
   <div class="log-out-button">
@@ -24,12 +70,5 @@
   </div>
   {{/if}}
   {{/each}}
-
-
-  <div class="log-out-button">
-    <a href="/logout"><i class="material-icons">logout</i>
-      <p><span>Выйти</span></p>
-    </a>
-  </div>
 
 </nav>
