@@ -23,7 +23,7 @@ router.get("/", (req, res) => {
 //login
 router.post("/login", async (req, res, next) => {
   passport.authenticate("local", {
-    successRedirect: "/gallery",
+    successRedirect: "/",
     failureRedirect: "/authorization",
   })(req, res, next);
 });
@@ -192,7 +192,7 @@ router.post("/change-password/:token", function (req, res) {
             user.resetPasswordExpires = undefined;
 
             await user.save(() => {
-              res.redirect("/gallery");
+              res.redirect("/");
               done(err, user);
             });
           }
@@ -240,7 +240,7 @@ router.post("/change-password/:token", function (req, res) {
 router.get("/logout", (req, res) => {
   req.logout();
   req.session.destroy();
-  res.redirect("/authorization");
+  res.redirect("/");
 });
 
 module.exports = router;
