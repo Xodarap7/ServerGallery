@@ -18,6 +18,35 @@
     }
   }
 }
+.user-parameters-adaptive {
+  position: relative;
+  padding: 0px 20px;
+  p {
+    font-size: 13px;
+  }
+  @include screen(phone) {
+    display: none;
+  }
+}
+.btn-menu-absolute,
+.btn-menu {
+  padding: 5px 50px;
+  border-radius: 25px;
+  font-size: 18px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  max-width: 200px;
+  @include screen(tablet) {
+    padding: 5px 60px;
+  }
+}
+.btn-menu-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 span {
   color: $white;
   font-size: 15px;
@@ -28,7 +57,7 @@ span {
 }
 
 #category-menu {
-  h4 {
+  h6 {
     color: $white;
     cursor: pointer;
     user-select: none;
@@ -45,14 +74,20 @@ span {
 
 .menu {
   position: fixed;
+
   width: 100%;
   z-index: 5;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
-  padding: 10px 0px 10px 0px;
+  padding: 10px 20px;
   @include screen(phone) {
     height: auto;
+  }
+  .log-out-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 }
 

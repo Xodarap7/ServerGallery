@@ -7,7 +7,7 @@
   width: 100%;
   height: 100vh;
   opacity: 0.9;
-  padding: 10px 0px 10px 0px;
+
   grid-template-columns: repeat(6, 1fr);
   .menu-open-menu {
     justify-content: space-between;
@@ -20,28 +20,26 @@
     display: flex;
     position: relative;
     flex-direction: row;
-    width: 95%;
+    width: 100%;
+    padding: 10px 20px;
     margin: auto;
     margin-bottom: 50px;
 
     p {
       font-size: 15px;
     }
-    .btn-menu {
-      padding: 5px 50px;
-      border-radius: 25px;
-      font-size: 18px;
-      transition: 0.2s ease-in;
-      cursor: pointer;
-      max-width: 200px;
-      @include screen(tablet) {
-        padding: 5px 60px;
+    .user-parameters-adaptive {
+      position: relative;
+      padding: 0px 20px;
+      p {
+        font-size: 13px;
       }
     }
     .icons-container {
       width: auto;
       height: auto;
       position: relative;
+      user-select: none;
       i {
         position: absolute;
         top: 50%;
@@ -52,6 +50,9 @@
         z-index: 20;
         border-radius: 50%;
         padding: 20px;
+        &:hover {
+          transform: translateX(-50%) translateY(-55%);
+        }
       }
       .pink-icon {
         color: $red;
@@ -88,11 +89,6 @@
       }
     }
 
-    @include screen(tablet-wide) {
-      .acc-inf {
-        display: none;
-      }
-    }
     @include screen(tablet) {
       width: 100%;
       margin-bottom: 20px;
@@ -123,6 +119,7 @@
     }
   }
   .text-category-block {
+    margin-top: 25px;
     font-size: 17px;
   }
   .category-container {

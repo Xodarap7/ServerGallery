@@ -6,24 +6,23 @@
     </div>
     {{#each user}}
     {{#if isGuest }}
-    <div class="user-parameters">
-      <h4 class="font-green">{{name}}</h4>
-      <p class="font-white">{{email}}</p>
+    <div>
+      <div class="user-parameters">
+        <h4 class="font-green">{{name}}</h4>
+        <p class="font-white">{{email}}</p>
+      </div>
     </div>
+    {{/if}}
+    {{else}}
 
-    <div class="log-out-button">
-      <a href="/authorization/logout"><i class="material-icons">logout</i>
-        <p><span>Выйти</span></p>
+    <div class="user-parameters">
+      <p class="font-red acc-inf">Войдите в аккаунт</p>
+      <a href="/authorization"><button class="btn-menu-absolute btn-green">
+          Войти
+        </button>
       </a>
     </div>
 
-    {{/if}}
-    {{else}}
-    <p class="font-red acc-inf">Вы еще не вошли в аккаунт</p>
-    <a href="/authorization"><button class="btn-menu btn-green">
-        Войти
-      </button>
-    </a>
     {{/each}}
   </div>
   <div class="svg-icons">
@@ -44,18 +43,20 @@
     </div>
   </div>
   <div class="text-icons-container">
+    <p class="text-center font-green text-category-block">Выберите категорию</p>
   </div>
-  <p class="text-center font-green text-category-block">Выберите категорию</p>
   <div class="category-container">
     <div id="category-menu" class="c-all">
-      <h4>all</h4>
+      <h6>all</h6>
     </div>
     {{#each category}}
     <div id="category-menu" class="c-{{categoryName}}">
-      <h4>{{categoryName}}</h4>
+      <h6>{{categoryName}}</h6>
     </div>
     {{/each}}
   </div>
+
+
 </div>
 
 <nav class="menu">
@@ -71,6 +72,33 @@
     </a>
   </div>
   {{/if}}
+
+  {{#if isGuest }}
+
+  <div class="log-out-info">
+    <div>
+      <div class="user-parameters-adaptive">
+        <h4 class="font-green">{{name}}</h4>
+        <p class="font-white">{{email}}</p>
+      </div>
+    </div>
+    <div class="log-out-button">
+      <a href="/authorization/logout"><i class="material-icons">logout</i>
+        <p><span>Выйти</span></p>
+      </a>
+    </div>
+
+  </div>
+
+  {{/if}}
+  {{else}}
+
+
+  <a href="/authorization"><button class="btn-menu btn-green">
+      Войти
+    </button>
+  </a>
+
   {{/each}}
 
 </nav>
