@@ -47,38 +47,88 @@
         top: 50%;
         left: 50%;
         transform: $center;
-        color: white;
-        font-size: 100px;
+        background-color: white;
+        font-size: 70px;
         z-index: 20;
+        border-radius: 50%;
+        padding: 20px;
       }
-      img {
-        width: 70%;
-        height: auto;
-        margin-left: 15%;
-        z-index: 19;
-        @include screen(tablet-wide) {
-          width: 95%;
-          margin-left: 2.5%;
+      .pink-icon {
+        color: $red;
+        border: $red solid 4px;
+        transition: ease 0.6s;
+        &:hover {
+          color: white;
+          border-color: white;
+          background-color: $red;
+        }
+      }
+      .green-icon {
+        color: rgb(153, 204, 153);
+        border: rgb(153, 204, 153) solid 4px;
+        transition: ease 0.6s;
+        &:hover {
+          color: white;
+          border-color: white;
+          background-color: rgb(153, 204, 153);
+        }
+      }
+      .blue-icon {
+        color: $blue;
+        border: $blue solid 4px;
+        transition: ease 0.6s;
+        &:hover {
+          background-color: $blue;
+          color: white;
+          border-color: white;
         }
       }
       p {
-        position: absolute;
-        left: 50%;
-        top: 100%;
-        transform: translateX(-50%);
+        margin-top: 150px;
       }
     }
 
+    @include screen(tablet-wide) {
+      .acc-inf {
+        display: none;
+      }
+    }
     @include screen(tablet) {
       width: 100%;
       margin-bottom: 20px;
+      .icons-container {
+        i {
+          font-size: 50px;
+        }
+        p {
+          margin-top: 120px;
+          font-size: 13px;
+        }
+      }
+    }
+    @include screen(phone) {
+      .icons-container {
+        i {
+          font-size: 30px;
+        }
+      }
     }
   }
-
+  .text-icons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    p {
+      font-size: 15px;
+    }
+  }
+  .text-category-block {
+    font-size: 17px;
+  }
   .category-container {
     width: 95%;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
