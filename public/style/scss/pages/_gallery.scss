@@ -228,8 +228,12 @@ span {
     &:hover {
       opacity: 0.7;
     }
+
     @include screen(phone) {
       width: 100%;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 }

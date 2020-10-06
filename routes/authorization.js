@@ -124,7 +124,7 @@ router.post("/reset-password", function (req, res, next) {
             "Please click on the following link, or paste this into your browser to complete the process:\n\n" +
             "http://" +
             req.headers.host +
-            "/change-password/" +
+            "/authorization/change-password/" +
             token +
             "\n\n" +
             "If you did not request this, please ignore this email and your password will remain unchanged.\n",
@@ -145,7 +145,7 @@ router.post("/reset-password", function (req, res, next) {
     ],
     function (err) {
       if (err) return next(err);
-      res.redirect("/reset-password");
+      res.redirect("/authorization/reset-password");
     }
   );
 });
@@ -192,7 +192,7 @@ router.post("/change-password/:token", function (req, res) {
             user.resetPasswordExpires = undefined;
 
             await user.save(() => {
-              res.redirect("/");
+              res.redirect("/authorization");
               done(err, user);
             });
           }
