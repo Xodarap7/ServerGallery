@@ -228,13 +228,13 @@ span {
     &:hover {
       opacity: 0.7;
     }
-
-    @include screen(phone) {
-      width: 100%;
-      &:hover {
-        opacity: 1;
-      }
-    }
+  }
+  img {
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+  img[data-src] {
+    opacity: 0;
   }
 }
 
