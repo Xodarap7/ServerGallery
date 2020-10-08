@@ -24,13 +24,15 @@
   {{#if image}}
 
   {{#each image}}
-
-  <img class="{{categories}}" id="photo" src="/uploads/{{imagesName}}" alt="" />
+  <a href="/uploads/{{imagesName}}" class="progressive replace {{categories}}" id="photo">
+    <img src="tiny.jpg" class="preview" alt="image" />
+  </a>
+  {{!-- <img class="{{categories}}" id="photo" src="/uploads/{{imagesName}}" alt="" /> --}}
 
   {{/each}}
   {{/if}}
 </div>
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/progressive-image.js/dist/progressive-image.js"></script>
 <script src="js/gallery.js"></script>

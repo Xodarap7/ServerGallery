@@ -11,11 +11,11 @@ router.get("/", async (req, res) => {
   try {
     let category = await Category.find().lean();
     let image = await Image.find().lean();
-    // let user = await User.find();
+
     res.render("./pages/gallery", {
       category: category,
       image: image,
-      // user: user,
+      title: "Главная",
     });
   } catch (err) {
     console.error(err.message);

@@ -25,6 +25,8 @@
 
     {{/each}}
   </div>
+  {{#each user}}
+  {{#if isGuest }}
   <div class="svg-icons">
     <div class="icons-container">
       <i class="material-icons pink-icon">favorite_border</i>
@@ -42,6 +44,8 @@
 
     </div>
   </div>
+  {{/if}}
+  {{/each}}
   <div class="text-icons-container">
     <p class="text-center font-green text-category-block">Выберите категорию</p>
   </div>
