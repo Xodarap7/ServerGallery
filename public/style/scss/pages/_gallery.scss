@@ -170,40 +170,6 @@ span {
   }
 }
 
-.header {
-  width: 100%;
-  height: 600px;
-  margin-bottom: 10px;
-  background-image: url("../../img/header.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  position: relative;
-
-  @include screen(tablet) {
-    height: 450px;
-  }
-  .header-text {
-    position: absolute;
-    left: 50%;
-    bottom: 5%;
-    border: $white 2px solid;
-    transform: translateX(-50%);
-    background-color: black;
-    border-radius: 20px;
-    padding: 30px;
-    h1 {
-      color: $white;
-      font-style: italic;
-      span {
-        color: $green;
-        font-size: 80px;
-        font-style: italic;
-      }
-    }
-  }
-}
-
 .galery-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));

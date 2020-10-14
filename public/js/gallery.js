@@ -117,7 +117,17 @@ window.addEventListener("scroll", () => {
 
 // Lazy load img
 
-[].forEach.call(document.querySelectorAll("img[data-src]"), function (img) {
+// [].forEach.call(document.querySelectorAll("img[data-src]"), function (img) {
+//   img.setAttribute("src", img.getAttribute("data-src"));
+//   img.onload = function () {
+//     img.removeAttribute("data-src");
+//   };
+// });
+
+let imagesLoad = document.querySelectorAll("img[data-src]");
+const imagesLoadArray = Array.from(imagesLoad);
+
+imagesLoadArray.forEach((img) => {
   img.setAttribute("src", img.getAttribute("data-src"));
   img.onload = function () {
     img.removeAttribute("data-src");
