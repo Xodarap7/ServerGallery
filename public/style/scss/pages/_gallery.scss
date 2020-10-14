@@ -74,7 +74,8 @@ span {
 
 .menu {
   position: fixed;
-
+  background-color: black;
+  top: 0;
   width: 100%;
   z-index: 5;
   display: flex;

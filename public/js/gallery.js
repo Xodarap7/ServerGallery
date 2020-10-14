@@ -102,18 +102,18 @@ function nextImage() {
 }
 
 // MENU SCROLL (CHANGE BG COLOR)
-const nav = document.querySelector(".menu");
-let offsetTop;
+// const nav = document.querySelector(".menu");
+// let offsetTop;
 
-window.addEventListener("scroll", () => {
-  offsetTop = window.scrollY;
-  if (offsetTop > 200) {
-    nav.style.backgroundColor = "#000";
-  }
-  if (offsetTop < 200) {
-    nav.style.backgroundColor = "transparent";
-  }
-});
+// window.addEventListener("scroll", () => {
+//   offsetTop = window.scrollY;
+//   if (offsetTop > 200) {
+//     nav.style.backgroundColor = "#000";
+//   }
+//   if (offsetTop < 200) {
+//     nav.style.backgroundColor = "transparent";
+//   }
+// });
 
 // Lazy load img
 
@@ -125,9 +125,8 @@ window.addEventListener("scroll", () => {
 // });
 
 let imagesLoad = document.querySelectorAll("img[data-src]");
-const imagesLoadArray = Array.from(imagesLoad);
 
-imagesLoadArray.forEach((img) => {
+imagesLoad.forEach((img) => {
   img.setAttribute("src", img.getAttribute("data-src"));
   img.onload = function () {
     img.removeAttribute("data-src");

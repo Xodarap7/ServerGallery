@@ -1,11 +1,12 @@
 #open-menu {
   display: none;
   position: fixed;
+  top: 0;
   transform: translateX(-100%);
   z-index: 15;
   background-color: $black;
   width: 100%;
-  height: 100vh;
+  height: 150vh;
   opacity: 0.9;
 
   grid-template-columns: repeat(6, 1fr);
