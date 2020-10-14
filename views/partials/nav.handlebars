@@ -2,15 +2,20 @@
   <div class="menu-open-menu">
     <div id="category-menu" class="cursor-pointer log-out-button">
       <i class="material-icons">cancel</i>
-      <p><span>Закрыть</span></p>
     </div>
     {{#each user}}
     {{#if isGuest }}
-    <div>
+    <div class="logout-container">
       <div class="user-parameters">
         <h4 class="font-green">{{name}}</h4>
         <p class="font-white">{{email}}</p>
       </div>
+      <a href="authorization/logout">
+        <div id="category-menu" class="cursor-pointer log-out-button">
+          <i class="material-icons">logout</i>
+
+        </div>
+      </a>
     </div>
     {{/if}}
     {{else}}
@@ -28,21 +33,19 @@
   {{#each user}}
   {{#if isGuest }}
   <div class="svg-icons">
-    <div class="icons-container">
+    <a href="" class="icons-container">
       <i class="material-icons pink-icon">favorite_border</i>
       <p class="font-white">Избранное</p>
-
-    </div>
-    <div class="icons-container">
+    </a>
+    <a href="admin/add-image" class="icons-container">
       <i class="material-icons green-icon">add_photo_alternate</i>
       <p class="font-white">Добавить фото</p>
+    </a>
 
-    </div>
-    <div class="icons-container">
+    <a href="" class="icons-container">
       <i class="material-icons blue-icon">settings</i>
       <p class="font-white">Настройки</p>
-
-    </div>
+    </a>
   </div>
   {{/if}}
   {{/each}}
@@ -66,42 +69,16 @@
 <nav class="menu">
   <div id="menu" class="cursor-pointer">
     <i class="material-icons">menu</i>
-    <p><span>Категории</span></p>
+
   </div>
   {{#each user}}
   {{#if isAdmin }}
   <div class="log-out-button">
     <a href="/admin"><i class="material-icons">settings</i>
-      <p><span>Настроить</span></p>
+
     </a>
   </div>
   {{/if}}
-
-  {{#if isGuest }}
-
-  <div class="log-out-info">
-    <div>
-      <div class="user-parameters-adaptive">
-        <h4 class="font-green">{{name}}</h4>
-        <p class="font-white">{{email}}</p>
-      </div>
-    </div>
-    <div class="log-out-button">
-      <a href="/authorization/logout"><i class="material-icons">logout</i>
-        <p><span>Выйти</span></p>
-      </a>
-    </div>
-
-  </div>
-
-  {{/if}}
-  {{else}}
-
-
-  <a href="/authorization"><button class="btn-menu btn-green">
-      Войти
-    </button>
-  </a>
 
   {{/each}}
 

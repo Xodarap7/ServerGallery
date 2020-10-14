@@ -29,6 +29,11 @@
     p {
       font-size: 15px;
     }
+    .logout-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
     .user-parameters {
       position: relative;
       padding: 0px 20px;
@@ -36,6 +41,7 @@
         font-size: 13px;
       }
     }
+
     .icons-container {
       width: auto;
       height: auto;
