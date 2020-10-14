@@ -126,7 +126,7 @@ function nextImage() {
 
 let imagesLoad = document.querySelectorAll("img[data-src]");
 
-imagesLoad.forEach((img) => {
+imagesLoad.forEach.call((img) => {
   img.setAttribute("src", img.getAttribute("data-src"));
   img.onload = function () {
     img.removeAttribute("data-src");
